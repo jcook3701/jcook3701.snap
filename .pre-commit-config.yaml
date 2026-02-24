@@ -26,7 +26,7 @@ repos:
     rev: v24.5.0
     hooks:
       - id: ansible-lint
-        pass_filenames: true
+        pass_filenames: false
         stages: [manual]
         additional_dependencies:
           - ansible-core<2.16
