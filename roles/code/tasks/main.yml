@@ -1,18 +1,9 @@
 # SPDX-FileCopyrightText: Copyright © 2026, Jared Cook
 # SPDX-License-Identifier: AGPL-3.0-or-later
 ---
-# TODO: Move this to jcook3701.utils.snap
 - name: Ensure snapd is installed and running
-  block:
-    - name: Install snapd
-      ansible.builtin.package:
-        name: snapd
-        state: present
-    - name: Enable and start snapd socket
-      ansible.builtin.systemd:
-        name: snapd.socket
-        state: started
-        enabled: true
+  ansible.builtin.include_role:
+    name: jcook3701.utils.snap
 
 - name: Install Visual Studio Code via Snap
   community.general.snap:
